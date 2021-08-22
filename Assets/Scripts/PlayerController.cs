@@ -8,9 +8,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 _movement;
     private Rigidbody2D _rb;
 
+    private Animator _animator;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -28,6 +31,11 @@ public class PlayerController : MonoBehaviour
 
         _movement.Set(horizontal, vertical);
         _movement.Normalize();
+
+        // Player animations
+        _animator.SetFloat("LookX", _movement.x);
+        _animator.SetFloat("LookY", _movement.y);
+        _animator.SetFloat("Speed", _movement.magnitude);
     }
 
     private void FixedUpdate()

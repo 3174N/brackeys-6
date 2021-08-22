@@ -57,7 +57,7 @@ public class LevelLoader : MonoBehaviour
     {
         // transition.SetTrigger("Start");
 
-        yield return new WaitForSeconds(transitionTime);
+        yield return new WaitForSeconds(TransitionTime);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
     }
@@ -66,7 +66,7 @@ public class LevelLoader : MonoBehaviour
     {
         // transition.SetTrigger("Start");
 
-        yield return new WaitForSeconds(transitionTime);
+        yield return new WaitForSeconds(TransitionTime);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
     }

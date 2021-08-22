@@ -12,16 +12,16 @@ public class AudioEditor : Editor
 
         AudioManager sound = (AudioManager)target;
 
-        for (int i = 0; i < sound.sounds.Length; i++)
+        for (int i = 0; i < sound.Sounds.Length; i++)
         {
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Play \"" + sound.sounds[i].Name + '"'))
+            if (GUILayout.Button("Play \"" + sound.Sounds[i].Name + '"'))
             {
-                sound.Play(sound.sounds[i].name);
+                sound.Play(sound.Sounds[i].Name);
             }
-            if (GUILayout.Button("Stop \"" + sound.sounds[i].Name + '"'))
+            if (GUILayout.Button("Stop \"" + sound.Sounds[i].Name + '"'))
             {
-                sound.Stop(sound.sounds[i].name);
+                sound.Stop(sound.Sounds[i].Name);
             }
             GUILayout.EndHorizontal();
         }

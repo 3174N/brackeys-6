@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     public float TransitionTime = 1f;
-    // private Animator _transition;
+    private Animator _transition;
 
     private void Awake()
     {
-        // _transition = gameObject.GetComponent<Animator>();
+        _transition = gameObject.GetComponent<Animator>();
     }
 
     /// <summary>
@@ -33,16 +33,25 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(levelIndex));
     }
 
+    /// <summary>
+    /// Loads next level.
+    /// </summary>
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
+    /// <summary>
+    /// Loads the first level.
+    /// </summary>
     public void LoadStart()
     {
         StartCoroutine(LoadLevel(1));
     }
 
+    /// <summary>
+    /// Loads the menu level.
+    /// </summary>
     public void LoadMenu()
     {
         StartCoroutine(LoadLevel(0));
@@ -55,7 +64,7 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        // transition.SetTrigger("Start");
+        _transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(TransitionTime);
 
@@ -64,7 +73,7 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(string levelIndex)
     {
-        // transition.SetTrigger("Start");
+        _transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(TransitionTime);
 

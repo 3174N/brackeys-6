@@ -56,12 +56,7 @@ public class PlayerController : MonoBehaviour
         {
             if (_isCarrying)
             {
-                // Release item
-                _currentItem.parent = null;
-                // _currentItem.position = transform.GetComponent<SpriteRenderer>().bounds.max;
-                _currentItem = null;
-
-                _isCarrying = false;
+                ReleaseItem();
             }
             else
             {
@@ -72,6 +67,15 @@ public class PlayerController : MonoBehaviour
                 _isCarrying = true;
             }
         }
+    }
+
+    public void ReleaseItem()
+    {
+        // Release item
+        _currentItem.parent = null;
+        _currentItem = null;
+
+        _isCarrying = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

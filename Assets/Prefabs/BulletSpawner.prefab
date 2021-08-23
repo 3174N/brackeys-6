@@ -43,6 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c958f161f87b283328ea2040e7937762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Method: 0
+  Method: 2
   SpawnDelay: 1
   BulletPrefab: {fileID: 1830615849281296783, guid: a859c9cff4c63aac6b879563a9292aa0, type: 3}
+  DirectedTransform: {fileID: 0}
+  BulletAmount: 8
+  StartAngle: 0
+  EndAngle: 360

@@ -11,8 +11,13 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Cleaning")]
-    public KeyCode CleaningKey = KeyCode.E;
     public int CleaningAmount = 1;
+
+    [Header("Carrying")]
+    public KeyCode CarryKey = KeyCode.E;
+    public Transform CarryLocation;
+    private Transform _currentItem = null;
+    private bool _isInRange = false, _isCarrying = false;
 
     private Animator _animator;
 
@@ -42,6 +47,49 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat("LookX", _movement.x);
         _animator.SetFloat("LookY", _movement.y);
         _animator.SetFloat("Speed", _movement.magnitude);
+
+        // Carrying
+        if (_movement != Vector2.zero)
+            CarryLocation.localPosition = _movement;
+
+        if (Input.GetKeyDown(CarryKey))
+        {
+            if (_isCarrying)
+            {
+                // Release item
+                _currentItem.parent = null;
+                // _currentItem.position = transform.GetComponent<SpriteRenderer>().bounds.max;
+                _currentItem = null;
+
+                _isCarrying = false;
+            }
+            else
+            {
+                // Pick up item
+                _currentItem.position = CarryLocation.position;
+                _currentItem.parent = CarryLocation;
+
+                _isCarrying = true;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // pickup if it has tag "Item" and we are not carrying anything
+        if (other.CompareTag("Item") && _currentItem == null && !_isCarrying)
+        {
+            _currentItem = other.transform;
+            _isInRange = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.transform == _currentItem && !_isCarrying)
+        {
+            _currentItem = null;
+            _isInRange = false;
+        }
     }
 
     private void FixedUpdate()

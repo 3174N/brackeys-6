@@ -6,7 +6,6 @@ public class Dirt : MonoBehaviour
 {
     public int DirtLevel = 5;
     private int _currentDirt;
-    private PlayerController _player = null;
     private SpriteRenderer _renderer;
 
     private void Awake()
@@ -19,17 +18,6 @@ public class Dirt : MonoBehaviour
         _currentDirt = DirtLevel;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        PlayerController player = other.GetComponent<PlayerController>();
-
-        if (player != null)
-        {
-            // Player entered collider
-            _player = player;
-        }
-    }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         PlayerController player = other.GetComponent<PlayerController>();
@@ -37,19 +25,7 @@ public class Dirt : MonoBehaviour
         if (player != null)
         {
             // Player exited collider
-            _player = null;
-
             ReduceDirt(player.CleaningAmount);
-        }
-    }
-
-    private void Update()
-    {
-        if (_player != null)
-        {
-            // Player is in collider
-            // if (Input.GetKeyDown(_player.CleaningKey))
-            //     ReduceDirt(_player.CleaningAmount); // Clean dirt
         }
     }
 

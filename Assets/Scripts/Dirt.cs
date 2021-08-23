@@ -7,6 +7,12 @@ public class Dirt : MonoBehaviour
     public int DirtLevel = 5;
     private int _currentDirt;
     private PlayerController _player = null;
+    private SpriteRenderer _renderer;
+
+    private void Awake()
+    {
+        _renderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Start()
     {
@@ -51,9 +57,12 @@ public class Dirt : MonoBehaviour
     /// <param name="amount">How much to reduce.</param>
     private void ReduceDirt(int amount)
     {
-        // TODO: Change sprite opacity
-
         _currentDirt -= amount;
+
+        // Change sprite opacity
+        Color color = _renderer.material.color;
+        color.a = (float)_currentDirt / (float)DirtLevel;
+        _renderer.material.color = color;
 
         if (_currentDirt <= 0)
             RemoveDirt();

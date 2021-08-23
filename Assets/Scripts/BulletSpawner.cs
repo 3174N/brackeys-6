@@ -7,12 +7,14 @@ public class BulletSpawner : MonoBehaviour
     public enum ShootingMethod
     {
         Line,
+        Directed,
     };
 
     public ShootingMethod Method;
     public float SpawnDelay;
     private float _delay;
     public GameObject BulletPrefab;
+    public Transform DirectedTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,17 @@ public class BulletSpawner : MonoBehaviour
     private void Shoot()
     {
         // Spawn bullet
-        Instantiate(BulletPrefab, transform.position, transform.rotation);
+        switch (Method)
+        {
+            case ShootingMethod.Line:
+                Instantiate(BulletPrefab, transform.position, transform.rotation);
+                break;
+            case ShootingMethod.Directed:
+                Vector2 direction = transform.position - DirectedTransform.position;
+                GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90));
+                break;
+            default:
+                break;
+        }
     }
 }

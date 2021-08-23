@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movement")]
     public float Speed = 3f;
     private Vector2 _movement;
     private Rigidbody2D _rb;
+
+
+    [Header("Cleaning")]
+    public KeyCode CleaningKey = KeyCode.E;
+    public int CleaningAmount = 1;
 
     private Animator _animator;
 

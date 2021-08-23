@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+    // To use from another script use:
+    // FindObjectOfType<LevelLoader>()
+
     public float TransitionTime = 1f;
     private Animator _transition;
 

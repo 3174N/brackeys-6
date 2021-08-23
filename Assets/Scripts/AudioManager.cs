@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 public class AudioManager : MonoBehaviour
 {
     // To use from another script use:
-    // AudioManager.Play("theme");
+    // FindObjectOfType<AudioManager>()
 
     public static AudioManager Instance;
 

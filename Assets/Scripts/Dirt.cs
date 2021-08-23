@@ -38,6 +38,8 @@ public class Dirt : MonoBehaviour
         {
             // Player exited collider
             _player = null;
+
+            ReduceDirt(player.CleaningAmount);
         }
     }
 
@@ -46,8 +48,8 @@ public class Dirt : MonoBehaviour
         if (_player != null)
         {
             // Player is in collider
-            if (Input.GetKeyDown(_player.CleaningKey))
-                ReduceDirt(_player.CleaningAmount); // Clean dirt
+            // if (Input.GetKeyDown(_player.CleaningKey))
+            //     ReduceDirt(_player.CleaningAmount); // Clean dirt
         }
     }
 

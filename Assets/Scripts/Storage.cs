@@ -31,6 +31,10 @@ public class Storage : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Called when an item is collected.
+    /// </summary>
     public virtual void OnCollect()
     {
         _currentItems++;
@@ -41,6 +45,9 @@ public class Storage : MonoBehaviour
             OnCollectAll();
     }
 
+    /// <summary>
+    /// Called when all items are collected.
+    /// </summary>
     public virtual void OnCollectAll()
     {
         _isFull = true;

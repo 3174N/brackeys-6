@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float Speed = 20f;
     private Rigidbody2D _rb;
 
-    // public int Damage = 40;
+    public int Damage = 40;
 
     private void Awake()
     {
@@ -24,7 +24,13 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // TODO: Damage player
+        // Check if bullet hit player
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            // Damage player
+            player.DamagePlayer(Damage);
+        }
 
         // Destroy bullet
         Destroy(gameObject);

@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Health")]
+    public float MaxHealth = 100f;
+    private float _currentHealth;
+    public ProgressBar HealthBar;
+
     [Header("Movement")]
     public float Speed = 3f;
     private Vector2 _movement;
     private Rigidbody2D _rb;
-
 
     [Header("Cleaning")]
     public int CleaningAmount = 1;
@@ -30,7 +34,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _currentHealth = MaxHealth;
 
+        HealthBar.Maximum = MaxHealth;
+        HealthBar.Minimum = 0f;
+        HealthBar.Current = _currentHealth;
     }
 
     // Update is called once per frame
@@ -100,5 +108,16 @@ public class PlayerController : MonoBehaviour
     {
         // Set player velocity based on _movement
         _rb.velocity = new Vector2(_movement.x * Speed, _movement.y * Speed);
+    }
+
+    /// <summary>
+    /// Reduces player HP.
+    /// </summary>
+    /// <param name="amount">How much HP to reduce.</param>
+    public void DamagePlayer(float amount)
+    {
+        _currentHealth -= amount;
+
+        HealthBar.Current = _currentHealth;
     }
 }

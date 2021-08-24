@@ -18,16 +18,12 @@ public class ProgressBar : MonoBehaviour
     }
 #endif
 
-    #region Variables
-
-    public int Minimum;
-    public int Maximum;
-    public int Current;
+    public float Minimum;
+    public float Maximum;
+    public float Current;
     public Image Mask;
     public Image Fill;
     public Color FillColor;
-
-    #endregion
 
     // Start is called before the first frame update
     void Start()

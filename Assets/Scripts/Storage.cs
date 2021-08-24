@@ -6,6 +6,17 @@ public class Storage : MonoBehaviour
 {
     public int Items;
     private int _currentItems;
+    [HideInInspector] public bool _isFull = false;
+    public ProgressBar Bar;
+
+    private void Start()
+    {
+        _currentItems = 0;
+
+        Bar.Minimum = 0;
+        Bar.Maximum = Items;
+        Bar.Current = _currentItems;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,9 +35,14 @@ public class Storage : MonoBehaviour
     {
         _currentItems++;
 
+        Bar.Current = _currentItems;
+
         if (_currentItems >= Items)
             OnCollectAll();
     }
 
-    public virtual void OnCollectAll() { }
+    public virtual void OnCollectAll()
+    {
+        _isFull = true;
+    }
 }

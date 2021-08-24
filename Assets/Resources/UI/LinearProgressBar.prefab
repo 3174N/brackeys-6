@@ -147,7 +147,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: NaN
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -257,6 +257,6 @@ MonoBehaviour:
   Minimum: 0
   Maximum: 0
   Current: 0
-  Mask: {fileID: 0}
-  Fill: {fileID: 0}
-  FillColor: {r: 0, g: 0, b: 0, a: 0}
+  Mask: {fileID: 781186324218342470}
+  Fill: {fileID: 781186323467339526}
+  FillColor: {r: 1, g: 0, b: 0, a: 1}

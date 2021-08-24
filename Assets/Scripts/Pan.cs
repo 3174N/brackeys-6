@@ -6,7 +6,6 @@ public class Pan : Storage
 {
     public float CookTime;
     private float _currentTime;
-    private bool _isCooking = false;
 
     private void Start()
     {
@@ -17,12 +16,14 @@ public class Pan : Storage
     {
         base.OnCollectAll();
 
-        _isCooking = true;
+        Bar.Maximum = CookTime;
+        Bar.Minimum = 0f;
+        Bar.Current = _currentTime;
     }
 
     private void Update()
     {
-        if (_isCooking)
+        if (_isFull)
         {
             _currentTime -= Time.deltaTime;
 
@@ -31,7 +32,7 @@ public class Pan : Storage
                 // TODO: something
             }
 
-            // TODO: progress bar
+            Bar.Current = _currentTime;
         }
     }
 }

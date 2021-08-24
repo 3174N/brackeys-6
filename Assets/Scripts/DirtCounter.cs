@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class DirtCounter : MonoBehaviour
 {
-    void Start()
+    public int DirtNum;
+
+    public void RemoveDirt()
     {
+        DirtNum--;
 
-    }
-
-    void Update()
-    {
-
+        if (DirtNum <= 0)
+        {
+            // TODO: something
+        }
     }
 }

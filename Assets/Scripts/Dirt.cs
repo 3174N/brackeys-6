@@ -52,6 +52,7 @@ public class Dirt : MonoBehaviour
     private void RemoveDirt()
     {
         // TODO: particals?
+        FindObjectOfType<DirtCounter>().RemoveDirt();
         Destroy(gameObject);
     }
 }

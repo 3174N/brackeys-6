@@ -5,17 +5,17 @@ using UnityEngine;
 public class Storage : MonoBehaviour
 {
     public int Items;
-    private int _currentItems;
+    [HideInInspector] public int CurrentItems;
     [HideInInspector] public bool _isFull = false;
     public ProgressBar Bar;
 
     private void Start()
     {
-        _currentItems = 0;
+        CurrentItems = 0;
 
         Bar.Minimum = 0;
         Bar.Maximum = Items;
-        Bar.Current = _currentItems;
+        Bar.Current = CurrentItems;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,11 +37,11 @@ public class Storage : MonoBehaviour
     /// </summary>
     public virtual void OnCollect()
     {
-        _currentItems++;
+        CurrentItems++;
 
-        Bar.Current = _currentItems;
+        Bar.Current = CurrentItems;
 
-        if (_currentItems >= Items)
+        if (CurrentItems >= Items)
             OnCollectAll();
     }
 

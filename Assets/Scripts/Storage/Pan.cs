@@ -10,8 +10,20 @@ public class Pan : Storage
     private void Start()
     {
         _currentTime = CookTime;
+
+        CurrentItems = 0;
+
+        Bar.Minimum = 0;
+        Bar.Maximum = Items;
+        Bar.Current = CurrentItems;
     }
 
+    public override void OnCollect()
+    {
+        base.OnCollect();
+
+        Debug.Log(Bar.Maximum);
+    }
     public override void OnCollectAll()
     {
         base.OnCollectAll();

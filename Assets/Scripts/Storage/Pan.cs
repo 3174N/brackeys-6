@@ -18,12 +18,6 @@ public class Pan : Storage
         Bar.Current = CurrentItems;
     }
 
-    public override void OnCollect()
-    {
-        base.OnCollect();
-
-        Debug.Log(Bar.Maximum);
-    }
     public override void OnCollectAll()
     {
         base.OnCollectAll();

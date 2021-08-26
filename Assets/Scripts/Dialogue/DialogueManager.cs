@@ -7,6 +7,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public Animator DialogueAnimator;
+    public Image DialogueImage;
     public TMP_Text NameText;
     public TMP_Text DialogueText;
     public Queue<string> Sentences;
@@ -26,7 +27,8 @@ public class DialogueManager : MonoBehaviour
         // Open dialogue box
         DialogueAnimator.SetBool("IsOpen", true);
 
-        // Set dialogue name
+        // Set dialogue name and image
+        DialogueImage = dialogue.Image;
         NameText.text = dialogue.Name;
 
         Sentences.Clear();

@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
         DialogueAnimator.SetBool("IsOpen", true);
 
         // Set dialogue name and image
-        DialogueImage = dialogue.Image;
+        DialogueImage.sprite = dialogue.Image;
         NameText.text = dialogue.Name;
 
         Sentences.Clear();

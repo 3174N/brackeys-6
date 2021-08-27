@@ -51,9 +51,12 @@ public class PlayerController : MonoBehaviour
         _movement.Set(horizontal, vertical);
         _movement.Normalize();
 
-        // Player animations
-        _animator.SetFloat("LookX", _movement.x);
-        _animator.SetFloat("LookY", _movement.y);
+        if (_movement != Vector2.zero)
+        {
+            // Player animations
+            _animator.SetFloat("LookX", _movement.x);
+            _animator.SetFloat("LookY", _movement.y);
+        }
         _animator.SetFloat("Speed", _movement.magnitude);
 
         // Carrying

@@ -15,6 +15,9 @@ public class BulletSpawner : MonoBehaviour
     public float SpawnDelay;
     private float _delay;
     public GameObject BulletPrefab;
+
+    public float probSwitch = 15f;
+
     [Header("Directed Bullets")] public Transform DirectedTransform;
 
     [Header("Angle")]
@@ -45,16 +48,30 @@ public class BulletSpawner : MonoBehaviour
     /// </summary>
     private void Shoot()
     {
+
+        // kind of a lame way to make randomness for now
+        if (Random.Range(0, 100) <= probSwitch)
+        {
+
+            // switch!
+            // make it loop through and not exit the range (Arr = [..32..]. Method=i= 31+1->32->0)
+            Method += 1;
+            int enumLen = System.Enum.GetNames(typeof(ShootingMethod)).Length;
+            Method = (ShootingMethod)(((int)Method) % enumLen);
+        }
+
         // Spawn bullet
         switch (Method)
         {
             case ShootingMethod.Line:
                 Instantiate(BulletPrefab, transform.position, transform.rotation);
                 break;
+
             case ShootingMethod.Directed:
                 Vector2 direction = transform.position - DirectedTransform.position;
                 GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90));
                 break;
+
             case ShootingMethod.Angle:
                 float angleStep = (EndAngle - StartAngle) / (BulletAmount);
                 float angle = StartAngle;
@@ -70,8 +87,6 @@ public class BulletSpawner : MonoBehaviour
 
                     angle += angleStep;
                 }
-                break;
-            default:
                 break;
         }
     }

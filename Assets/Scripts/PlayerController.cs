@@ -52,14 +52,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _curIframes = Mathf.Max(0, _curIframes - 1);
         HandleMovement();
         HandleCarrying();
     }
 
-    bool ticking; float ttt;
     public void HandleMovement()
     {
-        if (ticking) { ttt += Time.deltaTime; }
+        //if (ticking) { ttt += Time.deltaTime; }
 
         // Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -112,14 +112,14 @@ public class PlayerController : MonoBehaviour
         // if you're trying to dodge and can, do it
         if (!_isDodging && _cooldownTimer == 0 && Input.GetKeyDown(DodgeKey))
         {
-            ttt = 0;
-            ticking = true;
+            //ttt = 0;
+            //ticking = true;
 
             // save last movement to lock it in dodge
             _dodge_movement = new Vector2(_movement.x, _movement.y);
             _isDodging = true;
             _dodgeTimer = _dodgeAmount;
-            Debug.Log("DODGE TIME = " + _dodgeTimer + " " + _dodgeAmount);
+            //Debug.Log("DODGE TIME = " + _dodgeTimer + " " + _dodgeAmount);
 
             // set iframes (don't interfere with other iframes), cd and animation
             _curIframes = Mathf.Max(_curIframes, _iframes);
@@ -149,8 +149,8 @@ public class PlayerController : MonoBehaviour
                 _isDodging = false;
                 _animator.SetBool("IsDodging", false);
 
-                Debug.Log("TIME = " + ttt);
-                ticking = false;
+                //Debug.Log("TIME = " + ttt);
+                //ticking = false;
             }
         }
     }

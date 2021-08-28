@@ -1412,9 +1412,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelTemplate
       objectReference: {fileID: 0}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: _dodgeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: _cooldownTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505333816242483, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505334089631009, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8109505334089631009, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505334200438958, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505334200438958, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505334200438959, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505334200438961, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0e11e244d56f533c8cc15152182c194, type: 3}

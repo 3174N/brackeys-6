@@ -27,8 +27,10 @@ public class PlayerController : MonoBehaviour
     [Header("Dodging")]
     public KeyCode DodgeKey = KeyCode.Space;
     bool _isDodging = false;
-    public float _dodgeTime = 0.5f, _cooldownTime = 1f, DodgeSpeedMult = 0.8f;
+    public float _dodgeTime = 0.2f, _cooldownTime = 0.8f, DodgeSpeedMult = 1.2f;
     float _dodgeTimer, _cooldownTimer;
+
+    Vector2 _dodge_movement; // workaround
 
 
     private Animator _animator;
@@ -54,8 +56,12 @@ public class PlayerController : MonoBehaviour
         HandleCarrying();
     }
 
+    float ttt = 0;
+    bool ticking = false;
     public void HandleMovement()
     {
+        if (ticking) { ttt += Time.deltaTime; }
+
         // Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -73,14 +79,14 @@ public class PlayerController : MonoBehaviour
             // issue with it. On the last dodge frame _isDodging is false so it won't render the animation.
             HandleDodge();
 
-            // if you didn't dodge
+            // don't set overall position during dodge
             if (!_isDodging) { 
                 // else play walking animations
                 _animator.SetFloat("LookY", _movement.y);
                 _animator.SetFloat("LookX", _movement.x);
-                _animator.SetFloat("Speed", _movement.magnitude);
             }
         }
+        _animator.SetFloat("Speed", _movement.magnitude);
     }
 
     public void HandleCarrying()
@@ -108,18 +114,25 @@ public class PlayerController : MonoBehaviour
         // if you're trying to dodge and can, do it
         if (!_isDodging && _cooldownTimer == 0 && Input.GetKeyDown(DodgeKey))
         {
+            ttt = 0;
+            ticking = true;
+
+            // save last movement to lock it in dodge
+            _dodge_movement = new Vector2(_movement.x, _movement.y);
             _isDodging = true;
             _dodgeTimer = _dodgeTime;
+
+            // set iframes (don't interfere with other iframes), cd and animation
             _curIframes = Mathf.Max(_curIframes, _iframes);
             _cooldownTimer = _cooldownTime;
-            _animator.SetTrigger("Dodging");
+            _animator.SetBool("IsDodging", true);
         }
 
         if (_isDodging)
         {
             // set movement to lock in dodge direction
-            _movement = _rb.transform.forward;
-            Debug.Log("Setting speed to" + _movement);
+            _movement = _dodge_movement * DodgeSpeedMult;
+            //Debug.Log("Setting speed to" + _movement);
         }
     }
 
@@ -135,8 +148,10 @@ public class PlayerController : MonoBehaviour
             // uh oh ran out of dodge time
             if (_dodgeTimer == 0)
             {
+                Debug.Log("TIME = " + ttt);
+
                 _isDodging = false;
-                _animator.SetBool("Dodging", false);
+                _animator.SetBool("IsDodging", false);
             }
         }
     }

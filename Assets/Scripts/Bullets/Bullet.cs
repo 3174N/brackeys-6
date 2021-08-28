@@ -6,8 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float Speed = 20f;
     private Rigidbody2D _rb;
-
-    public int Damage = 40;
+    public int Damage = 20;
 
     private void Awake()
     {
@@ -20,6 +19,7 @@ public class Bullet : MonoBehaviour
     {
         // Move bullet
         _rb.velocity = transform.up * Speed;
+        LifeTime = 13f;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

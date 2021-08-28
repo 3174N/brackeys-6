@@ -39,8 +39,10 @@ public class ProgressBar : MonoBehaviour
 
     void GetCurrentFill()
     {
-        float currentOffset = Current - Minimum;
-        float maximumOffset = Maximum - Minimum;
+        // precent of filled up 
+        float currentOffset = Mathf.Max(Current - Minimum, 0f);
+        float maximumOffset = Mathf.Abs(Maximum - Minimum);
+
         float fillAmount = currentOffset / maximumOffset;
         Mask.fillAmount = fillAmount;
 

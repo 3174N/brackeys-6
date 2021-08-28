@@ -176,10 +176,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d34da0092fbb199baf73f620fac2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
+  HealthBar: {fileID: 0}
+  _iframes: 12
+  _curIframes: 0
   Speed: 5
   CleaningAmount: 1
   CarryKey: 101
   CarryLocation: {fileID: 1252492963}
+  DodgeKey: 32
+  _dodgeAmount: 1
+  _cooldownTime: 0
+  DodgeSpeedMult: 1.2
 --- !u!95 &2611124571041325951
 Animator:
   serializedVersion: 3

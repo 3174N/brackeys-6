@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     [Header("Dodging")]
     public KeyCode DodgeKey = KeyCode.Space;
     bool _isDodging = false;
-    public float _dodgeTime = 0.2f, _cooldownTime = 0.8f, DodgeSpeedMult = 1.2f;
+    public float _dodgeAmount = 0.583f, _cooldownTime = 0.8f, DodgeSpeedMult = 1.2f;
     float _dodgeTimer, _cooldownTimer;
 
     Vector2 _dodge_movement; // workaround
@@ -56,8 +56,7 @@ public class PlayerController : MonoBehaviour
         HandleCarrying();
     }
 
-    float ttt = 0;
-    bool ticking = false;
+    bool ticking; float ttt;
     public void HandleMovement()
     {
         if (ticking) { ttt += Time.deltaTime; }
@@ -81,7 +80,6 @@ public class PlayerController : MonoBehaviour
 
             // don't set overall position during dodge
             if (!_isDodging) { 
-                // else play walking animations
                 _animator.SetFloat("LookY", _movement.y);
                 _animator.SetFloat("LookX", _movement.x);
             }
@@ -120,7 +118,8 @@ public class PlayerController : MonoBehaviour
             // save last movement to lock it in dodge
             _dodge_movement = new Vector2(_movement.x, _movement.y);
             _isDodging = true;
-            _dodgeTimer = _dodgeTime;
+            _dodgeTimer = _dodgeAmount;
+            Debug.Log("DODGE TIME = " + _dodgeTimer + " " + _dodgeAmount);
 
             // set iframes (don't interfere with other iframes), cd and animation
             _curIframes = Mathf.Max(_curIframes, _iframes);
@@ -132,7 +131,6 @@ public class PlayerController : MonoBehaviour
         {
             // set movement to lock in dodge direction
             _movement = _dodge_movement * DodgeSpeedMult;
-            //Debug.Log("Setting speed to" + _movement);
         }
     }
 
@@ -148,10 +146,11 @@ public class PlayerController : MonoBehaviour
             // uh oh ran out of dodge time
             if (_dodgeTimer == 0)
             {
-                Debug.Log("TIME = " + ttt);
-
                 _isDodging = false;
                 _animator.SetBool("IsDodging", false);
+
+                Debug.Log("TIME = " + ttt);
+                ticking = false;
             }
         }
     }

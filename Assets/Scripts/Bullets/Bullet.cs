@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour
     {
         // Move bullet
         _rb.velocity = transform.up * Speed;
-        LifeTime = 13f;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

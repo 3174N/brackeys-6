@@ -2026,6 +2026,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelTemplate
       objectReference: {fileID: 0}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: _dodgeAmount
+      value: 0.583
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: _cooldownTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8109505334089631009, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

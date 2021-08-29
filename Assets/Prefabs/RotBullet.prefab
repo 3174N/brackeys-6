@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Method: 0
-  SpawnDelay: 0.5
+  SpawnDelay: 1
   BulletPrefab: {fileID: 1830615849281296783, guid: a859c9cff4c63aac6b879563a9292aa0, type: 3}
   probSwitch: 15
   DirectedTransform: {fileID: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Method: 0
-  SpawnDelay: 0.5
+  SpawnDelay: 1
   BulletPrefab: {fileID: 1830615849281296783, guid: a859c9cff4c63aac6b879563a9292aa0, type: 3}
   probSwitch: 15
   DirectedTransform: {fileID: 0}
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Method: 0
-  SpawnDelay: 0.5
+  SpawnDelay: 1
   BulletPrefab: {fileID: 1830615849281296783, guid: a859c9cff4c63aac6b879563a9292aa0, type: 3}
   probSwitch: 15
   DirectedTransform: {fileID: 0}
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Method: 0
-  SpawnDelay: 0.5
+  SpawnDelay: 1
   BulletPrefab: {fileID: 1830615849281296783, guid: a859c9cff4c63aac6b879563a9292aa0, type: 3}
   probSwitch: 15
   DirectedTransform: {fileID: 0}

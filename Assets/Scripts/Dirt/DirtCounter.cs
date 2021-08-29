@@ -12,7 +12,8 @@ public class DirtCounter : MonoBehaviour
 
         if (DirtNum <= 0)
         {
-            // TODO: something
+            FindObjectOfType<GameManager>().Level1 = true;
+            FindObjectOfType<GameManager>().Load();
         }
     }
 }

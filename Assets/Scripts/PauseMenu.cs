@@ -57,6 +57,8 @@ public class PauseMenu : MonoBehaviour
     public void Menu()
     {
         Resume();
+        FindObjectOfType<AudioManager>().Stop("Stress");
+        FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<LevelLoader>().LoadMenu();
     }
 }

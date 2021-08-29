@@ -758,7 +758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3302470698086946814
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1482,6 +1482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5133506895110375664, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5133506895110375667, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1567,6 +1571,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5133506895246580600, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_fontSize
+      value: 46.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133506895246580600, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -1599,6 +1607,10 @@ PrefabInstance:
       value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 5133506895457005596, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_fontSize
+      value: 34.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133506895457005596, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -1613,6 +1625,18 @@ PrefabInstance:
     - target: {fileID: 5133506895457005596, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133506895894395602, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 296.9546
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133506895894395602, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64.5553
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133506895894395602, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 5133506895894395612, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
       propertyPath: m_Sprite
@@ -1658,6 +1682,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5133506896460011500, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5133506896460011502, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
@@ -1686,6 +1714,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6108086837837906680}
+    - target: {fileID: 5133506896460011503, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 156.7025
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133506896460011503, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 34.0658
+      objectReference: {fileID: 0}
     - target: {fileID: 5133506896570135841, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1722,6 +1758,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6108086837837906680}
+    - target: {fileID: 5133506896570135847, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a990872f6c623efa9fb7748782c4e5e, type: 3}
 --- !u!224 &6108086836874203165 stripped

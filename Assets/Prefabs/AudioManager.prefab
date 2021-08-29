@@ -43,4 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4452ef5fc767b8c2a14a0a7e1fa5c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sounds: []
+  Sounds:
+  - Name: Stress
+    Clip: {fileID: 8300000, guid: a9344abca632beb288add5690a7e1abc, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 1
+    Type: 1
+    Source: {fileID: 0}
+  - Name: Theme
+    Clip: {fileID: 8300000, guid: e2bfee672564d9a08a7b0b83d66e29ac, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 1
+    Type: 1
+    Source: {fileID: 0}

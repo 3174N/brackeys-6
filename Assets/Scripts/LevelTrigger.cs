@@ -12,6 +12,9 @@ public class LevelTrigger : MonoBehaviour
 
         if (player != null)
         {
+            FindObjectOfType<AudioManager>().Stop("Theme");
+            FindObjectOfType<AudioManager>().Play("Stress");
+
             FindObjectOfType<LevelLoader>().Load(LevelToLoad);
         }
     }

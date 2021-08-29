@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
 
     public void Load()
     {
+        FindObjectOfType<AudioManager>().Stop("Stress");
+        FindObjectOfType<AudioManager>().Play("Theme");
+
         if (Level1 && Level2 && Level3)
             FindObjectOfType<LevelLoader>().Load(4);
         else

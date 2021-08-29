@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     public float MaxHealth = 100f;
     public ProgressBar HealthBar;
     // iframes needs a revision later.
-    public int _iframes = 12, _curIframes;
+    public float _iframes = 1f;
+    float _curIframes;
 
     [Header("Movement")]
     public float Speed = 5.7f;
@@ -47,20 +48,27 @@ public class PlayerController : MonoBehaviour
         HealthBar.Maximum = MaxHealth;
         HealthBar.Minimum = 20f;
         HealthBar.Current = MaxHealth;
+
+        // hacky solution
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("IgnoreBullet"), LayerMask.NameToLayer("Bullet"));
     }
 
     // Update is called once per frame
     void Update()
     {
-        _curIframes = Mathf.Max(0, _curIframes - 1);
+        HandleIframes();
         HandleMovement();
         HandleCarrying();
     }
 
+    public void HandleIframes()
+    {
+        if(_curIframes == 0) { gameObject.layer = LayerMask.NameToLayer("Default");}
+        _curIframes = Mathf.Max(0, _curIframes - Time.deltaTime);
+    }
+
     public void HandleMovement()
     {
-        //if (ticking) { ttt += Time.deltaTime; }
-
         // Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -112,17 +120,15 @@ public class PlayerController : MonoBehaviour
         // if you're trying to dodge and can, do it
         if (!_isDodging && _cooldownTimer == 0 && Input.GetKeyDown(DodgeKey))
         {
-            //ttt = 0;
-            //ticking = true;
 
             // save last movement to lock it in dodge
             _dodge_movement = new Vector2(_movement.x, _movement.y);
             _isDodging = true;
             _dodgeTimer = _dodgeAmount;
-            //Debug.Log("DODGE TIME = " + _dodgeTimer + " " + _dodgeAmount);
 
             // set iframes (don't interfere with other iframes), cd and animation
             _curIframes = Mathf.Max(_curIframes, _iframes);
+            gameObject.layer = LayerMask.NameToLayer("IgnoreBullet"); // ignore bullets on dodge
             _cooldownTimer = _cooldownTime;
             _animator.SetBool("IsDodging", true);
         }
@@ -148,9 +154,6 @@ public class PlayerController : MonoBehaviour
             {
                 _isDodging = false;
                 _animator.SetBool("IsDodging", false);
-
-                //Debug.Log("TIME = " + ttt);
-                //ticking = false;
             }
         }
     }
@@ -195,6 +198,7 @@ public class PlayerController : MonoBehaviour
         if (_curIframes == 0)
         {
             HealthBar.Current -= damage;
+            _curIframes = 1f;
         }
     }
 }

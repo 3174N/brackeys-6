@@ -8,7 +8,7 @@ public class TriggerOnStart : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!_isTriggered)
+        if (!_isTriggered && !(FindObjectOfType<GameManager>().Level1 || FindObjectOfType<GameManager>().Level2 || FindObjectOfType<GameManager>().Level3))
         {
             GetComponent<DialogueTrigger>().TriggerDialogue();
             _isTriggered = true;

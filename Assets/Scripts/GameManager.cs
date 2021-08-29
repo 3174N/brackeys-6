@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameManager Instance;
+    public static GameManager Instance;
 
     public bool Level1 = false, Level2 = false, Level3 = false;
     private void Awake()

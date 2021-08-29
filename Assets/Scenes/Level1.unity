@@ -6627,6 +6627,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2616997616322682236, guid: 4792e70c99dd2b29ca8ca5bfa5282731, type: 3}
   m_PrefabInstance: {fileID: 2111460731}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &516059605 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6104158516385240296, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+  m_PrefabInstance: {fileID: 1295871663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &693754518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5257655936184468732, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+  m_PrefabInstance: {fileID: 1295871663}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3c828ab6a9769cd8b97b1f799f70e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &706058559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8538,6 +8554,30 @@ PrefabInstance:
     - target: {fileID: 2111917642752233715, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
       propertyPath: m_Name
       value: LevelTemplate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: Speed
+      value: 5.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: _iframes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 693754518}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: _dodgeAmount
+      value: 0.583
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: CarryLocation
+      value: 
+      objectReference: {fileID: 516059605}
+    - target: {fileID: 8109505333816242481, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
+      propertyPath: _cooldownTime
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8109505333816242485, guid: e0e11e244d56f533c8cc15152182c194, type: 3}
       propertyPath: m_LocalPosition.x

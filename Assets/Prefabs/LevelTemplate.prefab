@@ -123,11 +123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8307908647233900907, guid: f05289c79b794907fb0c5bf4e3133df2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.2007027
       objectReference: {fileID: 0}
     - target: {fileID: 8307908647233900907, guid: f05289c79b794907fb0c5bf4e3133df2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8307908647233900948, guid: f05289c79b794907fb0c5bf4e3133df2, type: 3}
       propertyPath: orthographic size
@@ -393,34 +393,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2611124571041325944, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
-      propertyPath: m_Size.x
-      value: 0.5248077
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611124571041325944, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
-      propertyPath: m_Size.y
-      value: 0.75673103
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611124571041325944, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0021147132
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611124571041325944, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.28933108
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611124571041325944, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.3125
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611124571041325945, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -8205642674007973484, guid: 57e299fcabf6c104b975d5f65df88a07, type: 3}
-    - target: {fileID: 2611124571041325945, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2611124571041325946, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
       propertyPath: DeathMenu
       value: 
@@ -429,14 +401,6 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 7834146278862209190}
-    - target: {fileID: 2611124571041325946, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
-      propertyPath: MaxHealth
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611124571041325946, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
-      propertyPath: _cooldownTime
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2611124571041325950, guid: c98469b63514471ce81c460bdb772f8a, type: 3}
       propertyPath: m_RootOrder
       value: 3

@@ -105,8 +105,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_SortingOrder: 100
+  m_Sprite: {fileID: -8205642674007973484, guid: 57e299fcabf6c104b975d5f65df88a07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,18 +130,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0021147132, y: -0.28933108}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1, y: 1.3125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5248077, y: 0.75673103}
   m_EdgeRadius: 0
 --- !u!50 &2611124571041325947
 Rigidbody2D:
@@ -178,16 +178,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   HealthBar: {fileID: 0}
-  _iframes: 12
-  _curIframes: 0
-  Speed: 5
+  _iframes: 1
+  Speed: 5.7
   CleaningAmount: 1
   CarryKey: 101
   CarryLocation: {fileID: 1252492963}
   DodgeKey: 32
-  _dodgeAmount: 1
-  _cooldownTime: 0
+  _dodgeAmount: 0.583
+  _cooldownTime: 0.8
   DodgeSpeedMult: 1.2
+  DeathMenu: {fileID: 0}
 --- !u!95 &2611124571041325951
 Animator:
   serializedVersion: 3

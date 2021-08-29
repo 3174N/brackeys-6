@@ -8,6 +8,7 @@ public class Dirt : MonoBehaviour
     private int _currentDirt;
     private SpriteRenderer _renderer;
     public GameObject Sparkle;
+    public bool IsTut = false;
 
     private void Awake()
     {
@@ -54,7 +55,8 @@ public class Dirt : MonoBehaviour
     {
         GameObject sparkle = Instantiate(Sparkle, transform.position, transform.rotation);
         Destroy(sparkle, 3f);
-        FindObjectOfType<DirtCounter>().RemoveDirt();
+        if (!IsTut)
+            FindObjectOfType<DirtCounter>().RemoveDirt();
         Destroy(gameObject);
     }
 }

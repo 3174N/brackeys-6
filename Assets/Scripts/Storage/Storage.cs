@@ -51,5 +51,8 @@ public class Storage : MonoBehaviour
     public virtual void OnCollectAll()
     {
         _isFull = true;
+
+        FindObjectOfType<GameManager>().Level2 = true;
+        FindObjectOfType<GameManager>().Load() = true;
     }
 }

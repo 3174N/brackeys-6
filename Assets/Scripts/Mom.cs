@@ -31,7 +31,7 @@ public class Mom : MonoBehaviour
     {
         if (_isInRange && Input.GetKeyDown(KeyCode.E))
         {
-            GetComponent<DialogueTrigger>().TriggerDialog();
+            GetComponent<DialogueTrigger>().TriggerDialogue();
         }
     }
 }

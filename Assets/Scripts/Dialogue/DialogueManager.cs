@@ -10,33 +10,29 @@ public class DialogueManager : MonoBehaviour
     public Image DialogueImage;
     public TMP_Text NameText;
     public TMP_Text DialogueText;
-    public Queue<string> Sentences;
+    public Queue<Dialogue> Dialogues;
 
     // Start is called before the first frame update
     void Start()
     {
-        Sentences = new Queue<string>();
+        Dialogues = new Queue<Dialogue>();
     }
 
     /// <summary>
     /// Starts a dialogue.
     /// </summary>
-    /// <param name="dialogue">Dialogue to start.</param>
-    public void StartDialogue(Dialogue dialogue)
+    /// <param name="dialogues">Dialogue to start.</param>
+    public void StartDialogue(Dialogue[] dialogues)
     {
         // Open dialogue box
         DialogueAnimator.SetBool("IsOpen", true);
 
-        // Set dialogue name and image
-        DialogueImage.sprite = dialogue.Image;
-        NameText.text = dialogue.Name;
 
-        Sentences.Clear();
+        Dialogues.Clear();
 
-        foreach (string sentence in dialogue.Sentences)
+        foreach (Dialogue dialogue in dialogues)
         {
-            // Add sentences to queue
-            Sentences.Enqueue(sentence);
+            Dialogues.Enqueue(dialogue);
         }
 
         // Display first sentence
@@ -48,7 +44,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void DisplayNextSentence()
     {
-        if (Sentences.Count == 0)
+        if (Dialogues.Count == 0)
         {
             // There are no more sentences in queue, end dialogue
             EndDialogue();
@@ -56,9 +52,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         // Set next sentence
-        string sentence = Sentences.Dequeue();
+        Dialogue dialogue = Dialogues.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+
+        // Set dialogue name and image
+        DialogueImage.sprite = dialogue.Image;
+        NameText.text = dialogue.Name;
+        // Set dialogue text
+        StartCoroutine(TypeSentence(dialogue.Sentence));
     }
 
     /// <summary>

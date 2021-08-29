@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b782716406d314f9a11b8602880a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToLive: 5
+  TimeToLive: 10
 --- !u!114 &-3356132968029847567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cad149bb60cf91b8b06e7acb6dcc24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 20
+  Speed: 5
   _rb: {fileID: 0}
   Damage: 20
 --- !u!50 &3466420865199637292
@@ -218,6 +218,7 @@ MonoBehaviour:
   Method: 0
   SpawnDelay: 0.5
   BulletPrefab: {fileID: 1830615849281296783, guid: a859c9cff4c63aac6b879563a9292aa0, type: 3}
+  probSwitch: 15
   DirectedTransform: {fileID: 0}
   BulletAmount: 0
   StartAngle: 0
@@ -268,6 +269,7 @@ MonoBehaviour:
   Method: 0
   SpawnDelay: 0.5
   BulletPrefab: {fileID: 1830615849281296783, guid: a859c9cff4c63aac6b879563a9292aa0, type: 3}
+  probSwitch: 15
   DirectedTransform: {fileID: 0}
   BulletAmount: 0
   StartAngle: 0
@@ -318,6 +320,7 @@ MonoBehaviour:
   Method: 0
   SpawnDelay: 0.5
   BulletPrefab: {fileID: 1830615849281296783, guid: a859c9cff4c63aac6b879563a9292aa0, type: 3}
+  probSwitch: 15
   DirectedTransform: {fileID: 0}
   BulletAmount: 0
   StartAngle: 0
@@ -368,6 +371,7 @@ MonoBehaviour:
   Method: 0
   SpawnDelay: 0.5
   BulletPrefab: {fileID: 1830615849281296783, guid: a859c9cff4c63aac6b879563a9292aa0, type: 3}
+  probSwitch: 15
   DirectedTransform: {fileID: 0}
   BulletAmount: 0
   StartAngle: 0

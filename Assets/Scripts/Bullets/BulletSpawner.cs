@@ -49,16 +49,16 @@ public class BulletSpawner : MonoBehaviour
     private void Shoot()
     {
 
-        // kind of a lame way to make randomness for now
-        if (Random.Range(0, 100) <= probSwitch)
-        {
+        // // kind of a lame way to make randomness for now
+        // if (Random.Range(0, 100) <= probSwitch)
+        // {
 
-            // switch!
-            // make it loop through and not exit the range (Arr = [..32..]. Method=i= 31+1->32->0)
-            Method += 1;
-            int enumLen = System.Enum.GetNames(typeof(ShootingMethod)).Length;
-            Method = (ShootingMethod)(((int)Method) % enumLen);
-        }
+        //     // switch!
+        //     // make it loop through and not exit the range (Arr = [..32..]. Method=i= 31+1->32->0)
+        //     Method += 1;
+        //     int enumLen = System.Enum.GetNames(typeof(ShootingMethod)).Length;
+        //     Method = (ShootingMethod)(((int)Method) % enumLen);
+        // }
 
         // Spawn bullet
         switch (Method)

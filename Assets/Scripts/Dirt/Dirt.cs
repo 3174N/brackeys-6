@@ -7,6 +7,7 @@ public class Dirt : MonoBehaviour
     public int DirtLevel = 5;
     private int _currentDirt;
     private SpriteRenderer _renderer;
+    public GameObject Sparkle;
 
     private void Awake()
     {
@@ -51,7 +52,8 @@ public class Dirt : MonoBehaviour
     /// </summary>
     private void RemoveDirt()
     {
-        // TODO: particals?
+        GameObject sparkle = Instantiate(Sparkle, transform.position, transform.rotation);
+        Destroy(sparkle, 3f);
         FindObjectOfType<DirtCounter>().RemoveDirt();
         Destroy(gameObject);
     }

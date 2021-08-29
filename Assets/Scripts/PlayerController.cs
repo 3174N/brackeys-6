@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Health")]
     public float MaxHealth = 100f;
+    private float _currentHealth;
     public ProgressBar HealthBar;
     // iframes needs a revision later.
     public float _iframes = 1f;
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviour
     public float _dodgeAmount = 0.583f, _cooldownTime = 0.8f, DodgeSpeedMult = 1.2f;
     float _dodgeTimer, _cooldownTimer;
 
+    public GameObject DeathMenu;
+
     Vector2 _dodge_movement; // workaround
 
 
@@ -45,8 +48,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _currentHealth = MaxHealth;
         HealthBar.Maximum = MaxHealth;
-        HealthBar.Minimum = 20f;
+        HealthBar.Minimum = 0f;
         HealthBar.Current = MaxHealth;
 
         // hacky solution
@@ -63,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     public void HandleIframes()
     {
-        if(_curIframes == 0) { gameObject.layer = LayerMask.NameToLayer("Default");}
+        if (_curIframes == 0) { gameObject.layer = LayerMask.NameToLayer("Default"); }
         _curIframes = Mathf.Max(0, _curIframes - Time.deltaTime);
     }
 
@@ -87,7 +91,8 @@ public class PlayerController : MonoBehaviour
             HandleDodge();
 
             // don't set overall position during dodge
-            if (!_isDodging) { 
+            if (!_isDodging)
+            {
                 _animator.SetFloat("LookY", _movement.y);
                 _animator.SetFloat("LookX", _movement.x);
             }
@@ -104,7 +109,7 @@ public class PlayerController : MonoBehaviour
         // drop or carry item
         if (Input.GetKeyDown(CarryKey))
         {
-            if (_isCarrying) {ReleaseItem();}
+            if (_isCarrying) { ReleaseItem(); }
             else if (_currentItem)
             {
                 // place currently picked up item in your hand
@@ -199,6 +204,14 @@ public class PlayerController : MonoBehaviour
         {
             HealthBar.Current -= damage;
             _curIframes = 1f;
+            _currentHealth -= damage;
+
+            if (_currentHealth <= 0) Die();
         }
+    }
+    private void Die()
+    {
+        Time.timeScale = 0;
+        DeathMenu.SetActive(true);
     }
 }

@@ -8,6 +8,7 @@ public class Storage : MonoBehaviour
     [HideInInspector] public int CurrentItems;
     [HideInInspector] public bool _isFull = false;
     public ProgressBar Bar;
+    public bool _isTut = false;
 
     private void Start()
     {
@@ -52,7 +53,10 @@ public class Storage : MonoBehaviour
     {
         _isFull = true;
 
-        FindObjectOfType<GameManager>().Level2 = true;
-        FindObjectOfType<GameManager>().Load() = true;
+        if (!_isTut)
+        {
+            FindObjectOfType<GameManager>().Level2 = true;
+            FindObjectOfType<GameManager>().Load();
+        }
     }
 }

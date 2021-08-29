@@ -36,7 +36,7 @@ public class Pan : Storage
             if (_currentTime <= 0)
             {
                 FindObjectOfType<GameManager>().Level3 = true;
-                FindObjectOfType<GameManager>().Load() = true;
+                FindObjectOfType<GameManager>().Load();
             }
 
             Bar.Current = _currentTime;
